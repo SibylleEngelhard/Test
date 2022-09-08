@@ -19,14 +19,15 @@ example_listofdicts = [
 	{'Name': 'G', 'lat':-26.72039216, 'lon':17.99995017}]
 
 df1 = pd.DataFrame(example_listofdicts)
-st.write(df1.style.format({'lat': '{:,.8f}', 'lon': '{:,.8f}'}))
 
-col1, col2, col3 = st.columns(3,gap='large')
-
+col1, col2, col3, col4 = st.columns(4,gap='medium')
 with col1:
-	st.map(df1)
+	st.write(df1.style.format({'lat': '{:,.8f}', 'lon': '{:,.8f}'}))
 
 with col2:
+	st.map(df1)
+
+with col3:
 	st.pydeck_chart(pdk.Deck(
 			map_style='mapbox://styles/mapbox/outdoors-v11',
 			initial_view_state=pdk.ViewState(
@@ -45,7 +46,7 @@ with col2:
 					)
 				]
 		))
-with col3:
+with col4:
 	st.pydeck_chart(pdk.Deck(
 			map_style='mapbox://styles/mapbox/satellite-streets-v11',
 			initial_view_state=pdk.ViewState(
