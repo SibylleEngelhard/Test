@@ -32,7 +32,9 @@ with col2:
 			initial_view_state=pdk.ViewState(
 			latitude=-23,
 			longitude=18,
-			zoom=4),
+			zoom=4,
+			width=250,
+			height=250),
 			layers=[pdk.Layer(
 					'ScatterplotLayer',
 					data=df1,
@@ -49,7 +51,9 @@ with col3:
 			initial_view_state=pdk.ViewState(
 			latitude=-23,
 			longitude=18,
-			zoom=4),
+			zoom=4,
+			width=250,
+			height=250),
 			layers=[pdk.Layer(
 					'ScatterplotLayer',
 					data=df1,
